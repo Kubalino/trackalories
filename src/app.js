@@ -29,6 +29,7 @@ const ItemCtrl = ( () => {
         getItems: () => {
             return state.items;        
         },
+
         addItem: (name, calories) => {
             let id;
             // Create ID
@@ -48,6 +49,17 @@ const ItemCtrl = ( () => {
             
             return newItem;
         },
+
+        getTotalCalories: () => {
+            let total = 0;
+
+            state.items.forEach( item => {
+                total += item.calories;
+            });
+           state.totalCalories = total;
+            return state.totalCalories;
+        },
+
         logState: () => {
             return state;
         }
@@ -62,7 +74,8 @@ const UICtrl = ( () => {
         itemList: '#item-list',
         addBtn: '.add-btn',
         itemNameInput: '#item-name',
-        itemCaloriesInput: '#item-calories'
+        itemCaloriesInput: '#item-calories',
+        totalCalories: '.total-calories'
     }
 
     // Public Methods
@@ -89,6 +102,7 @@ const UICtrl = ( () => {
                 calories: document.querySelector(UISelectors.itemCaloriesInput).value
             }
         },
+
         addListItem: (item) => {
             // Show the list
             document.querySelector(UISelectors.itemList).style.display = 'block';
@@ -112,6 +126,10 @@ const UICtrl = ( () => {
         hideList: () => {
             document.querySelector(UISelectors.itemList).style.display = 'none';
         },
+
+        showTotalCalories: totalCalories => {
+            document.querySelector(UISelectors.totalCalories).textContent = totalCalories;
+        },    
 
         getSelectors: () => {
             return UISelectors;
@@ -141,10 +159,13 @@ const AppCtrl = ( (ItemCtrl, UICtrl) => {
             const newItem = ItemCtrl.addItem(input.name, input.calories);
             // Add item to UI Ctrl
             UICtrl.addListItem(newItem);
+            // Get total calories
+            const totalCalories = ItemCtrl.getTotalCalories();
+            // Add total calories to UI
+            UICtrl.showTotalCalories(totalCalories);
             // Clear fields
             UICtrl.clearInput();
         }
-
         e.preventDefault();
     }
 
@@ -160,7 +181,11 @@ const AppCtrl = ( (ItemCtrl, UICtrl) => {
             } else {
                 // Populate list with items
                 UICtrl.populateItemList(items);
-            }            
+            }
+            // Get total calories
+            const totalCalories = ItemCtrl.getTotalCalories();
+            // Add total calories to UI
+            UICtrl.showTotalCalories(totalCalories);            
             // Load event listeners
             loadEventListeners();
         }
