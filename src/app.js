@@ -30,6 +30,32 @@ const StorageCtrl = ( () => {
                 items = JSON.parse(localStorage.getItem('items'));
             }
             return items;
+        },
+
+        updateItemStorage: updatedItem => {
+            let items = JSON.parse(localStorage.getItem('items'));
+            
+            items.forEach((item, index) => {
+                if(updatedItem.id === item.id) {
+                    items.splice(index, 1, updatedItem);
+                }
+            });
+            localStorage.setItem('items', JSON.stringify(items));
+        },
+
+        deleteItemStorage: currentItem => {
+            let items = JSON.parse(localStorage.getItem('items'));
+
+            items.forEach((item, index) => {
+                if(currentItem.id === item.id) {
+                    items.splice(index, 1);
+                }
+            });
+            localStorage.setItem('items', JSON.stringify(items));
+        },
+
+        clearItemsFromStorage: () => {
+            localStorage.removeItem('items');
         }
     }
 })();
@@ -356,6 +382,8 @@ const AppCtrl = ( (ItemCtrl, StorageCtrl, UICtrl) => {
         const totalCalories = ItemCtrl.getTotalCalories();
         // Add total calories to UI
         UICtrl.showTotalCalories(totalCalories);
+         //Update from LS
+        StorageCtrl.updateItemStorage(updatedItem);
 
         UICtrl.clearEditState();
         
@@ -374,6 +402,8 @@ const AppCtrl = ( (ItemCtrl, StorageCtrl, UICtrl) => {
         const totalCalories = ItemCtrl.getTotalCalories();
         // Add total calories to UI
         UICtrl.showTotalCalories(totalCalories);
+        // Delete from LS
+        StorageCtrl.deleteItemStorage(currentItem);
 
         UICtrl.clearEditState();
 
@@ -390,6 +420,8 @@ const AppCtrl = ( (ItemCtrl, StorageCtrl, UICtrl) => {
         UICtrl.showTotalCalories(totalCalories);
         // Remove from UI
         UICtrl.removeItems();
+        // Remove from LS
+        StorageCtrl.clearItemsFromStorage();
         
         UICtrl.hideList();
 
