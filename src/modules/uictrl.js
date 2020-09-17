@@ -10,7 +10,8 @@ const UISelectors = {
     clearBtn: '.clear-btn',
     itemNameInput: '#item-name',
     itemCaloriesInput: '#item-calories',
-    totalCalories: '.total-calories'
+    totalCalories: '.total-calories',
+    messageSpan: '.message'
 }
 
 // Public Methods
@@ -118,6 +119,11 @@ const showEditState = () => {
     document.querySelector(UISelectors.addBtn).style.display = 'none';
 }
 
+const showSpan = message => {
+    console.log(message);
+    document.querySelector(UISelectors.messageSpan).innerHTML = `<span class="message-span">${message}</span>`;   
+}
+
 const getSelectors = () => {
     return UISelectors;
 }
@@ -135,5 +141,6 @@ export default {
     showTotalCalories,
     clearEditState,
     showEditState,
+    showSpan,
     getSelectors
 }

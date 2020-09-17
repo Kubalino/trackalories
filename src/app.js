@@ -45,6 +45,8 @@ const itemAddSubmit = e => {
         StorageCtrl.storeItem(newItem);
         // Clear fields
         UICtrl.clearInput();
+        // Show span message
+        setInterval(UICtrl.showSpan(`${newItem.name} successfully added!`), 3000);
     }
     e.preventDefault();
 }
