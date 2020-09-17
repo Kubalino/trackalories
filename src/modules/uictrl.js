@@ -11,7 +11,7 @@ const UISelectors = {
     itemNameInput: '#item-name',
     itemCaloriesInput: '#item-calories',
     totalCalories: '.total-calories',
-    messageSpan: '.message'
+    messageAlert: '.message-container'
 }
 
 // Public Methods
@@ -119,9 +119,22 @@ const showEditState = () => {
     document.querySelector(UISelectors.addBtn).style.display = 'none';
 }
 
-const showSpan = message => {
-    console.log(message);
-    document.querySelector(UISelectors.messageSpan).innerHTML = `<span class="message-span">${message}</span>`;   
+const showAlert = (message, classes) => {
+    document.querySelector(UISelectors.messageAlert).innerHTML = `<span class="${classes}">${message}</span>`;
+    //Clear alert message
+    setTimeout(() => {
+        //console.log('here timeout');
+        clearAlert();
+    }, 3000);
+
+}
+
+const clearAlert = () => {
+    const currentAlert = document.querySelector(UISelectors.messageAlert).innerHTML;   
+    
+    if(currentAlert !== '') {
+        document.querySelector(UISelectors.messageAlert).innerHTML = ``; 
+    }
 }
 
 const getSelectors = () => {
@@ -141,6 +154,7 @@ export default {
     showTotalCalories,
     clearEditState,
     showEditState,
-    showSpan,
+    showAlert,
+    clearAlert,
     getSelectors
 }

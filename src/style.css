@@ -9,6 +9,24 @@ body {
     flex: 1 0 auto;
 }
 
+.add-alert {
+    display: block;
+    padding : 5px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: 2px solid #4caf50;
+    background-color: #a5d6a7;
+}
+
+.update-alert {
+    display: block;
+    padding : 5px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: 2px solid #ffeb3b;
+    background-color: #fff59d;
+}
+
 html {
     height: 100%;
 }

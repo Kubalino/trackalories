@@ -28,7 +28,7 @@ const getItemsFromStorage = () => {
 }
 
 const updateItemFromStorage = updatedItem => {
-    let itFromems = JSON.parse(localStorage.getItem('items'));
+    let items = JSON.parse(localStorage.getItem('items'));
 
     items.forEach((item, index) => {
         if(updatedItem.id === item.id) {

@@ -46,9 +46,10 @@ const itemAddSubmit = e => {
         // Clear fields
         UICtrl.clearInput();
         // Show span message
-        setInterval(UICtrl.showSpan(`${newItem.name} successfully added!`), 3000);
-    }
+        UICtrl.showAlert(`<strong>${newItem.name}</strong> successfully added!`, 'add-alert');
+
     e.preventDefault();
+    }
 }
 
 //Edit Item click
@@ -84,6 +85,8 @@ const itemUpdateSubmit = e => {
     UICtrl.showTotalCalories(totalCalories);
     //Update from LS
     StorageCtrl.updateItemFromStorage(updatedItem);
+    // Show span message
+    UICtrl.showAlert(`<strong>${updatedItem.name}</strong> successfully updated!`, 'update-alert');
 
     UICtrl.clearEditState();
 
