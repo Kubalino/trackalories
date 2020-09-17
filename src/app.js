@@ -4,27 +4,27 @@ import UICtrl from './modules/uictrl.js';
 
 // Load Event Listeners
 const loadEventListeners = () => {
-// Get UI Selectors
-const UISelectors = UICtrl.getSelectors();
-// Disable submit on enter
-document.addEventListener('keypress', e => {
-    if(e.key === 'Enter') {
-        e.preventDefault();
-        return false;
-    }
-});
-// Add item event
-document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
-// Edit item event
-document.querySelector(UISelectors.itemList).addEventListener('click', itemEditClick);
-// Update item event
-document.querySelector(UISelectors.updateBtn).addEventListener('click', itemUpdateSubmit);
-// Delete item event
-document.querySelector(UISelectors.deleteBtn).addEventListener('click', itemDeleteSubmit);
-// Back button event
-document.querySelector(UISelectors.backBtn).addEventListener('click', UICtrl.clearEditState);
-// Clear items event
-document.querySelector(UISelectors.clearBtn).addEventListener('click', clearAllItemsClick);
+    // Get UI Selectors
+    const UISelectors = UICtrl.getSelectors();
+    // Disable submit on enter
+    document.addEventListener('keypress', e => {
+        if(e.key === 'Enter') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    // Add item event
+    document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
+    // Edit item event
+    document.querySelector(UISelectors.itemList).addEventListener('click', itemEditClick);
+    // Update item event
+    document.querySelector(UISelectors.updateBtn).addEventListener('click', itemUpdateSubmit);
+    // Delete item event
+    document.querySelector(UISelectors.deleteBtn).addEventListener('click', itemDeleteSubmit);
+    // Back button event
+    document.querySelector(UISelectors.backBtn).addEventListener('click', UICtrl.clearEditState);
+    // Clear items event
+    document.querySelector(UISelectors.clearBtn).addEventListener('click', clearAllItemsClick);
 }
 
 // Add item submit
@@ -81,7 +81,7 @@ const itemUpdateSubmit = e => {
     // Add total calories to UI
     UICtrl.showTotalCalories(totalCalories);
     //Update from LS
-    StorageCtrl.updateItemStorage(updatedItem);
+    StorageCtrl.updateItemFromStorage(updatedItem);
 
     UICtrl.clearEditState();
 
@@ -101,7 +101,7 @@ const itemDeleteSubmit = e => {
     // Add total calories to UI
     UICtrl.showTotalCalories(totalCalories);
     // Delete from LS
-    StorageCtrl.deleteItemStorage(currentItem);
+    StorageCtrl.deleteItemFromStorage(currentItem);
 
     UICtrl.clearEditState();
 
