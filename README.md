@@ -1,10 +1,11 @@
 # trackalories
-<<<<<<< HEAD
-Calories Tracker using Module Pattern and Vanilla JavaScript
-
-Materialize CSS for styling
-=======
-Calories Tracker using Module Pattern and Vanilla JavaScript, Bootswatch for styling
+Calories Tracker using Module Pattern and Vanilla JavaScript, Materialize CSS for styling
 
 Preview:
->>>>>>> 75c493213efe02de8b7663076ff1fc188fa24156
+![alt text](https://github.com/Kubalino/trackalories/blob/master/img_front.PNG?raw=true)
+
+Add Item:
+![alt text](https://github.com/Kubalino/trackalories/blob/master/img_added.PNG?raw=true)
+
+Update / Delete Option:
+![alt text](https://github.com/Kubalino/trackalories/blob/master/img_update.PNG?raw=true)
