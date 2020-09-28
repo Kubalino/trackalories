@@ -2,7 +2,7 @@
 Calories Tracker using Module Pattern and Vanilla JavaScript, Materialize CSS for styling
 
 Preview:
-![Alt text](https://github.com/Kubalino/trackalories/resources/blob/master/img_front.PNG?raw=true)
+![alt front](/resources/img_front.png)
 
 Add Item:
 ![Alt text](https://github.com/Kubalino/trackalories/resources/blob/master/img_added.PNG?raw=true)
