@@ -125,7 +125,7 @@ const showAlert = (message, classes) => {
     setTimeout(() => {
         //console.log('here timeout');
         clearAlert();
-    }, 3000);
+    }, 10000);
 
 }
 

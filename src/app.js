@@ -107,6 +107,8 @@ const itemDeleteSubmit = e => {
     UICtrl.showTotalCalories(totalCalories);
     // Delete from LS
     StorageCtrl.deleteItemFromStorage(currentItem);
+    // Show span message
+    UICtrl.showAlert(`<strong>${currentItem.name}</strong> successfully deleted!`, `delete-alert`);
 
     UICtrl.clearEditState();
 
@@ -114,7 +116,7 @@ const itemDeleteSubmit = e => {
 }
 
 // Clear items event
-const clearAllItemsClick = () => {
+const clearAllItemsClick = e => {
     // Delete all items from data structure
     ItemCtrl.clearAllItems();
     // Get total calories
@@ -125,7 +127,9 @@ const clearAllItemsClick = () => {
     UICtrl.removeItems();
     // Remove from LS
     StorageCtrl.clearItemsFromStorage();
-
+    // Show span message
+    UICtrl.showAlert(`All items successfully cleared!`, `delete-all-alert`);
+    
     UICtrl.hideList();
 
     e.preventDefault();
