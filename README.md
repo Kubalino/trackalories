@@ -1,14 +1,14 @@
 # trackalories
 Calories Tracker using Module Pattern and Vanilla JavaScript, Materialize CSS for styling
 
-Preview:
+**Preview:**
 
-![Alt text](https://github.com/kubalino/trackalories/resources/blob/master/resources/img_front.PNG?raw=true)
+![alt text](https://github.com/kubalino/trackalories/blob/master/resources/img_front.PNG?raw=true)
 
-Add Item:
+**Add Item:**
 
-![Alt text](https://github.com/kubalino/trackalories/resources/blob/master/resources/img_added.PNG?raw=true)
+![alt text](https://github.com/kubalino/trackalories/blob/master/resources/img_added.PNG?raw=true)
 
-Update / Delete Option:
+**Update / Delete Option:**
 
-![Alt text](https://github.com/kubalino/trackalories/resources/blob/master/resources/img_update.PNG?raw=true)
+![alt text](https://github.com/kubalino/trackalories/blob/master/resources/img_update.PNG?raw=true)
