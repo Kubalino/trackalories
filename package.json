@@ -1,0 +1,23 @@
+{
+  "name": "trackalories",
+  "version": "1.0.0",
+  "description": "Calories Tracker using Module Pattern:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kubalino/trackalories.git"
+  },
+  "author": "Carlos Noronha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kubalino/trackalories/issues"
+  },
+  "homepage": "https://Kubalino.github.io/trackalories",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
